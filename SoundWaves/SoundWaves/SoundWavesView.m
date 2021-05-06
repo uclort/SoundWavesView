@@ -45,15 +45,15 @@ const CGFloat lineNumber = 40.0;
         [self.lineGroup addObject:line];
     }
     [self layoutLine];
-    [self beginAnimate];
+    [self beginAnimation];
     
 }
 
-- (void)beginAnimate {
+- (void)beginAnimation {
     NSArray *randomArray = [self sortedRandomArrayByArray:[self randomArray]];
     if (!randomArray.count) {
         [self.lineGroup enumerateObjectsUsingBlock:^(SoundWavesLine * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [obj stopAnimate];
+            [obj stopAnimation];
         }];
         return;
     }
@@ -62,16 +62,16 @@ const CGFloat lineNumber = 40.0;
         CGFloat random = [randomArray[index] floatValue];
         obj.toValue = random;
         obj.beginTime = index / 100.0;
-        [obj beginAnimate];
+        [obj beginAnimation];
     }];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self beginAnimate];
+        [self beginAnimation];
     });
 }
 
 - (void)setLevel:(SoundWavesLevel)level {
     _level = level;
-    [self beginAnimate];
+    [self beginAnimation];
 }
 
 - (NSArray *)randomArray {

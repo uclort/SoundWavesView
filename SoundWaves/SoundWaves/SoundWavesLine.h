@@ -22,10 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) CGFloat beginTime;
 
 /// 开始动画
-- (void)beginAnimate;
+- (void)beginAnimation;
 
 /// 停止动画
-- (void)stopAnimate;
+- (void)stopAnimation;
 
 @end
 

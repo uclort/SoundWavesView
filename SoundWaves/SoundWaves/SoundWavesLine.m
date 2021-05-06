@@ -15,7 +15,7 @@
 @property(strong, nonatomic) UIColor *lineColor;
 
 /// 启用动画
-@property(assign, nonatomic) BOOL animateEnable;
+@property(assign, nonatomic) BOOL animationEnable;
 
 @end
 
@@ -65,25 +65,25 @@
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    if (self.animateEnable) {
-        [self addAnimate];
+    if (self.AnimationEnable) {
+        [self addAnimation];
     }
 }
 
-- (void)addAnimate {
+- (void)addAnimation {
     [self.shapeLayer addAnimation:[self getScaleAnimationToValue:self.toValue] forKey:@"animation"];
 }
 
-- (void)beginAnimate {
-    if (self.animateEnable) {
+- (void)beginAnimation {
+    if (self.animationEnable) {
         return;
     }
-    self.animateEnable = true;
-    [self addAnimate];
+    self.animationEnable = true;
+    [self addAnimation];
 }
 
-- (void)stopAnimate {
-    self.animateEnable = false;
+- (void)stopAnimation {
+    self.animationEnable = false;
 }
 
 @end
