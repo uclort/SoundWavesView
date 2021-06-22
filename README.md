@@ -1,4 +1,4 @@
-![SoundWavesGIF](https://raw.githubusercontent.com/uclort/file/master/uPic/SoundWavesGIF.gif)
+![SoundWavesGIF](https://raw.githubusercontent.com/uclort/file/master/SoundWavesGIF.gif)
 
 ```objective-c
 typedef NS_ENUM(NSInteger, SoundWavesLevel) {
